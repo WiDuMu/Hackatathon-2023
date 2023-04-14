@@ -3,6 +3,7 @@ export default defineNuxtConfig({
     runtimeConfig: {
         username: '',
         password: '',
+        user: '',
     },
     app: {
         pageTransition: { name: 'page', mode: 'out-in' }
