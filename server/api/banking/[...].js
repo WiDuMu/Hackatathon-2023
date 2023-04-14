@@ -1,5 +1,5 @@
 import base64 from 'base-64';
-const url = 'https://alpha-api.usbank.com/innovation/bank-node/reference/v1/products';
+const url = 'https://alpha-api.usbank.com/innovation/bank-node/reference/v1/';
 const config = useRuntimeConfig();
 const username = config.username;
 const password = config.password;
@@ -15,6 +15,8 @@ export default defineEventHandler(
         let queries = getQuery(event)
         let request = event['req']
         console.log(request.url, request.method)
-        return $fetch(`${url}`,  {method: 'get', headers: headers} )
+        const method = request.method;
+        const extension = request.url.substring('api/banking/'.length + 1)
+        return $fetch(`${url}${extension}`,  {method: request.method, headers: headers} )
     }
     )

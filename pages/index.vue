@@ -1,3 +1,5 @@
+<title>ping!</title>
+
 <script setup>
 const goals = useState('goals', () => [
     {
